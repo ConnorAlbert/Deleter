@@ -1,6 +1,6 @@
 # Deletor
 
-* This program is used to delete files or move files to a different folder.
+* This program is used to delete or move files to a different directory.
 
 ## Steps
 
