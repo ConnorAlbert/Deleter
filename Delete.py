@@ -22,7 +22,7 @@ def Delete_Files():
         print('\nFile, ', delete,
               'The file deletion is successfully completed !!\n')
         Delete_Files()
-    elif file == "n":
+    elif file == "m":
         if os.path.isdir(dst+'/'+delete):
             print(delete, 'exists in the destination path!')
             shutil.rmtree(dst+'/'+delete)
