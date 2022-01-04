@@ -1,10 +1,9 @@
 import os
 import shutil
 
-
 def Delete_Files():
     os.chdir(r"Your directory here")  # Current location
-    directory = r'Your directory here'
+    directory = r"Your directory here"
     for filename in os.listdir(directory):  # list files in directory
         f = os.path.join(directory, filename)
         if os.path.isfile(f):
