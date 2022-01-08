@@ -1,11 +1,16 @@
 import os
 import shutil
 
-while True:
-    directory = r"Your directory here"  # Current location
-    dst = r"Directory to move to here"  # Move to location
-    os.chdir(str(directory))
-    dir = os.listdir(str(directory))
+def main():
+    rawdirectory = input("Enter directory here: ")  # Current location
+    directory = rawdirectory.strip(' " " ')
+    rawdst = input("Enter location to move file or leave blank to skip: ")  # Move to location
+    dst = rawdst.strip(' " " ')
+    start(directory, dst)
+
+def start(directory, dst):
+    os.chdir(directory)
+    dir = os.listdir(directory)
 
     # Checking if the list is empty or not
     if len(dir) == 0:
@@ -28,8 +33,10 @@ while True:
         print('\nStarting the removal of the file !')
         try:
             os.remove(File_Folder)
+            start(directory, dst)
         except PermissionError:
             shutil.rmtree(File_Folder)
+            start(directory, dst)
         print('\nFile, ', File_Folder,
               'The file deletion is successfully completed !!\n')
 
@@ -48,4 +55,5 @@ while True:
             dest = shutil.move(move, dst)
 
     else:
-        exit()
+        main()
+main()
